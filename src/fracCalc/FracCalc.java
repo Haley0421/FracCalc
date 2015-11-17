@@ -1,9 +1,14 @@
 package fracCalc;
 
+import java.util.Scanner;
+
 public class FracCalc {
 
     public static void main(String[] args) 
     {
+    	Scanner scan = new Scanner(System.in);
+    	scan.nextLine();
+    
         // TODO: Read the input from the user and call produceAnswer with an equation
 
     }
@@ -18,9 +23,17 @@ public class FracCalc {
     //      e.g. return ==> "1_1/4"
     public static String produceAnswer(String input)
     { 
-        // TODO: Implement this function to produce the solution to the input
+    	int num1=0;
+    	int num2=0;
+    	int den1=0;
+    	int den2=0;
+    	
+    
+    
+
+    	// TODO: Implement this function to produce the solution to the input
         
-        return "";
+        return "scan";
     }
 
     // TODO: Fill in the space below with any helper methods that you think you will need
