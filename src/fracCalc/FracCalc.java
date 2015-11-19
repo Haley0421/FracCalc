@@ -25,15 +25,15 @@ public class FracCalc {
     public static String produceAnswer(String scanned)
     { 
     
-    	String first = scanned.substring(scanned.lastIndexOf(" ")+1);
-    
+    	String second = scanned.substring(scanned.lastIndexOf(" ")+1);
+    	String whole=second.substring(0,second.indexOf("_"));
+    	String num2=second.substring(second.indexOf("_")+1,second.indexOf("/"));
+    	String den2=second.substring(second.indexOf("/")+1);
+    	
 
-        return first;
-    }
-
-	private static int lastindexOf(String string) {
+        return "Whole: "+ whole + "\n" + "Numerator: "+ num2 + "\n" + "Denominator: " + den2 ;
+        
 		// TODO Auto-generated method stub
-		return 0;
 	}
 
     // TODO: Fill in the space below with any helper methods that you think you will need
