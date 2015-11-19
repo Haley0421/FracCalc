@@ -27,12 +27,7 @@ public class FracCalc {
     
     	String first = scanned.substring(scanned.lastIndexOf(" ")+1);
     
-//    int num1 = Integer.parseInt(scanned.substring(0,scanned.indexOf("/")));
-//    int den1=Integer.parseInt(scanned.substring(scanned.indexOf("/"),scanned.indexOf("")));
-//    int num2=Integer.parseInt(scanned.substring(scanned.indexOf(""),scanned.indexOf("/")));
-//    int den2=Integer.parseInt(scanned.substring(scanned.indexOf("/"),scanned.indexOf("")));
-    	// TODO: Implement this function to produce the solution to the input
-        
+
         return first;
     }
 
