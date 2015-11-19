@@ -7,7 +7,8 @@ public class FracCalc {
     public static void main(String[] args) 
     {
     	Scanner scan = new Scanner(System.in);
-    	scan.nextLine();
+    	String scanned=scan.nextLine();
+    	System.out.print(produceAnswer(scanned));
     
         // TODO: Read the input from the user and call produceAnswer with an equation
 
@@ -21,20 +22,24 @@ public class FracCalc {
     //        
     // The function should return the result of the fraction after it has been calculated
     //      e.g. return ==> "1_1/4"
-    public static String produceAnswer(String input)
+    public static String produceAnswer(String scanned)
     { 
-    	int num1=0;
-    	int num2=0;
-    	int den1=0;
-    	int den2=0;
-    	
     
+    	String first = scanned.substring(scanned.lastIndexOf(" ")+1);
     
-
+//    int num1 = Integer.parseInt(scanned.substring(0,scanned.indexOf("/")));
+//    int den1=Integer.parseInt(scanned.substring(scanned.indexOf("/"),scanned.indexOf("")));
+//    int num2=Integer.parseInt(scanned.substring(scanned.indexOf(""),scanned.indexOf("/")));
+//    int den2=Integer.parseInt(scanned.substring(scanned.indexOf("/"),scanned.indexOf("")));
     	// TODO: Implement this function to produce the solution to the input
         
-        return "scan";
+        return first;
     }
+
+	private static int lastindexOf(String string) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
     // TODO: Fill in the space below with any helper methods that you think you will need
     
