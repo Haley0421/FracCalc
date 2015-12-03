@@ -6,9 +6,10 @@ public class FracCalc {
 
     public static void main(String[] args) 
     {
-    	Scanner scan = new Scanner(System.in);
+    	Scanner scan = new Scanner(System.in);    			
     	String scanned=scan.nextLine();
-    	System.out.print(produceAnswer(scanned));
+    	if (scanned != "quit"){
+       	System.out.print(produceAnswer(scanned));}
     
         // TODO: Read the input from the user and call produceAnswer with an equation
 
@@ -24,18 +25,29 @@ public class FracCalc {
     //      e.g. return ==> "1_1/4"
     public static String produceAnswer(String scanned)
     { 
-    
+    	String whole="";
     	String second = scanned.substring(scanned.lastIndexOf(" ")+1);
-    	String whole=second.substring(0,second.indexOf("_"));
-    	String num2=second.substring(second.indexOf("_")+1,second.indexOf("/"));
-    	String den2=second.substring(second.indexOf("/")+1);
+    	if (second.contains("_"))
+    		{ whole=second.substring(0,second.indexOf("_"));}
+    	else{
+    		  whole="0";}
+    	String num2="";
+    	String den2="";
+    	if (second.contains("/"))
+    		{num2=second.substring(second.indexOf("_")+1,second.indexOf("/"));
+    		den2=second.substring(second.indexOf("/")+1);}
+    	else{
+    			whole=second.substring(second.indexOf("_")+1);
+    			den2="1";
+    			num2="0";                   
+    			
+    		}
     	
-
-        return "Whole: "+ whole + "\n" + "Numerator: "+ num2 + "\n" + "Denominator: " + den2 ;
+    return "whole:"+ whole + " numerator:"+ num2 + " denominator:" + den2 ;
         
 		// TODO Auto-generated method stub
-	}
+	}}
 
     // TODO: Fill in the space below with any helper methods that you think you will need
     
-}
+
