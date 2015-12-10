@@ -87,13 +87,8 @@ if (frac.contains("/"))
     		top = top1;
     		den = top2;}
     	if (sign.equals("-")){
-    		if(Integer.valueOf(secondsplit[0])>Integer.valueOf(firstsplit[0])){
-    			whole = Integer.valueOf(secondsplit[0])-Integer.valueOf(firstsplit[0]);
-    			whole = -whole;
-    		}
-    		else{
         	whole = Integer.valueOf(firstsplit[0])-Integer.valueOf(secondsplit[0]);
-        	top = top1-top2;}}
+        	top = top1-top2;}
     	int temp = 0;
     	if (top!=0 && den!=0){
     	if (top % den==0) {
