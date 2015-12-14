@@ -92,6 +92,7 @@ if (frac.contains("/"))
         int div=0;
     	int top = 0;
     	int whole = 0;
+    	int temp1;
     	
         if (sign.equals("+"))
     			{top = top1 + top2;
@@ -102,11 +103,17 @@ if (frac.contains("/"))
         
         
     	if (sign.equals("*")){
-        	 whole = Integer.valueOf(firstsplit[0])*Integer.valueOf(secondsplit[0]);
+        	 whole = Integer.valueOf(firstsplit[0])*Integer.valueOf(secondsplit[0]);   	 
         	 den = den*den;
-       		top = top1*top2;}
+       		top = top1*top2;
+       		System.out.println("after");
+       		System.out.println(top);
+        	System.out.println(whole);
+        	System.out.println(den);
+       		
+       		}
     	
-    	
+    
     	
     	
     	if (sign.equals("/")){
@@ -120,17 +127,24 @@ if (frac.contains("/"))
         	whole = Integer.valueOf(firstsplit[0])-Integer.valueOf(secondsplit[0]);
         	top = top1-top2;}
     	
-    	
-    	
+        	
     	int temp = 0;
     	
     	if (top!=0 && den!=0){
-    	if (top % den==0) {
+    		if (top % den==0) {
     		temp = top/den;
     		whole += temp;
+    
     		top=0;
-    		den=0;
-    	}}
+    		den=0;}
+    	else{
+    		if (sign.equals("*")){
+        		top=whole*top;
+        	}}
+    	}
+    	System.out.println(top);
+    	System.out.println(whole);
+    	System.out.println(den);
     	if(top != 0 && den != 0) {
     		int[] reduce = reduce(top,den);  
     		top = reduce[0];
