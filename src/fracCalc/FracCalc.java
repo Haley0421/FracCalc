@@ -38,30 +38,19 @@ if (frac.contains("/"))
     return splitfraction;
     }
 
-    public static int greatestcommon (int num,int den1){
-    	while (den1 > 0){
-    		int x = den1;
-    		den1 = num % den1;
+    public static int greatestcommon (int num,int den){
+    	while (den > 0){
+    		int x = den;
+    		den = num % den;
     		num = x;
     	}
     	return num;
     }
     public static int[] reduce(int top, int den){
-    	 int gcd =1;
-    	 int x;
-   if ( top < den ){
-    	 x=top;}
-    else
-    	{x=den;}
-    while (  !((top%gcd)==0) && ((den%gcd)==0) )
-    	{x--;
-        gcd = x;}
-    	top = top / gcd;
-        den = den / gcd;
-        int[] reduced = {top, den};
-   
-  
-		return reduced;}
+    	 int gcf = greatestcommon(top, den);
+    	 int [] rf = {top/gcf, den/gcf};
+    	   
+		return rf;}
     
 		
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
@@ -76,25 +65,35 @@ if (frac.contains("/"))
     	int num = 0;
     	int top1 = 0;
     	int top2 = 0;
+    	int top=0;
+    	int den=0;
     	String second = scanned.substring(scanned.lastIndexOf(" ")+1);
     	String first = scanned.substring(0,(scanned.indexOf(" ")));
     	String sign = scanned.substring(scanned.indexOf(" ")+1,scanned.lastIndexOf(" "));
     	String[] secondsplit = splitfraction(second);
     	String[] firstsplit = splitfraction(first); 
-    	Integer den = Integer.valueOf(firstsplit[2])*Integer.valueOf(secondsplit[2]);
-    if (Integer.valueOf(firstsplit[1])!=0 || Integer.valueOf(secondsplit[2])!=0);{
-        top1 = Integer.valueOf(firstsplit[1])*Integer.valueOf(secondsplit[2]);}
-    if (Integer.valueOf(firstsplit[2])!=0 || Integer.valueOf(secondsplit[1])!=0);{
-    	top2 = Integer.valueOf(firstsplit[2])*Integer.valueOf(secondsplit[1]);}
+    	if ((sign.equals("+") || sign.equals("-")) && (Integer.valueOf(firstsplit[2])==0 || Integer.valueOf(firstsplit[1])==0)){
+    	top=Integer.valueOf(secondsplit[1]);
+    	den=Integer.valueOf(secondsplit[2]);}
+    	else{
+    	den = Integer.valueOf(firstsplit[2])*Integer.valueOf(secondsplit[2]);
+    	if (Integer.valueOf(firstsplit[1])!=0 || Integer.valueOf(secondsplit[2])!=0){
+    		top1 = Integer.valueOf(firstsplit[1])*Integer.valueOf(secondsplit[2]);}
+    	
+    	if (Integer.valueOf(firstsplit[2])!=0 || Integer.valueOf(secondsplit[1])!=0){
+    		top2 = Integer.valueOf(firstsplit[2])*Integer.valueOf(secondsplit[1]);}}
         System.out.println(top1);
         System.out.println(top2);
         
         int div=0;
-    	int top = 0;
+    	
     	int whole = 0;
     	int temp1;
     	
         if (sign.equals("+"))
+        	if(top!=0)
+        	{}
+        	else
     			{top = top1 + top2;
     	    	 whole = Integer.valueOf(firstsplit[0])+Integer.valueOf(secondsplit[0]);
     	    	 System.out.println(whole);
@@ -117,15 +116,20 @@ if (frac.contains("/"))
     	
     	
     	if (sign.equals("/")){
-        	 whole = Integer.valueOf(firstsplit[0])/Integer.valueOf(secondsplit[0]);
-    		top = top1;
-    		den = top2;}
+    		if(Integer.valueOf(firstsplit[0])!=0  ||  Integer.valueOf(secondsplit[0])!=0)
+    		{ whole = Integer.valueOf(firstsplit[0])/Integer.valueOf(secondsplit[0]);}
+    		den*=top1;
+    		top=top2*den;
+    		}
     	
     	
     	
     	if (sign.equals("-")){
+    		if(top!=0)
+    	{}
+    	else{
         	whole = Integer.valueOf(firstsplit[0])-Integer.valueOf(secondsplit[0]);
-        	top = top1-top2;}
+        	top = top1-top2;}}
     	
         	
     	int temp = 0;
@@ -153,7 +157,7 @@ if (frac.contains("/"))
     	String fract = "";
     	if (top==0){
     		fract = "" + whole;}
-    	if (whole == 0)
+    	if (whole == 0 && top!=0)
     		fract = top + "/" + den;
     	if (whole==0 && top==0){
     		fract="0";}
