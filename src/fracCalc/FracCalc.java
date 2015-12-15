@@ -84,6 +84,7 @@ if (frac.contains("/"))
     		top2 = Integer.valueOf(firstsplit[2])*Integer.valueOf(secondsplit[1]);}}
         System.out.println(top1);
         System.out.println(top2);
+        System.out.println(den);
         
         int div=0;
     	
@@ -92,7 +93,8 @@ if (frac.contains("/"))
     	
         if (sign.equals("+"))
         	if(top!=0)
-        	{}
+        	{whole = Integer.valueOf(firstsplit[0])+Integer.valueOf(secondsplit[0]);
+        	System.out.println(whole);}
         	else
     			{top = top1 + top2;
     	    	 whole = Integer.valueOf(firstsplit[0])+Integer.valueOf(secondsplit[0]);
@@ -102,7 +104,7 @@ if (frac.contains("/"))
         
         
     	if (sign.equals("*")){
-        	 whole = Integer.valueOf(firstsplit[0])*Integer.valueOf(secondsplit[0]);   	 
+        	 whole = Integer.valueOf(firstsplit[0])*Integer.valueOf(secondsplit[0]);   
         	 den = den*den;
        		top = top1*top2;
        		System.out.println("after");
@@ -153,7 +155,21 @@ if (frac.contains("/"))
     		int[] reduce = reduce(top,den);  
     		top = reduce[0];
     		den = reduce[1];
+    		System.out.println("here");
+    		System.out.println(top);
+    		System.out.println(den);
     	}
+    if(top>0){
+    	while (top>den){
+    		top=top-den;
+    		whole++;
+    	}}
+    if(top<0){
+    	while(top<den){
+    		top=top+den;
+    		whole--;
+    	}
+    }
     	String fract = "";
     	if (top==0){
     		fract = "" + whole;}
