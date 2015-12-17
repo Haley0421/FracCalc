@@ -38,6 +38,11 @@ if (frac.contains("/"))
     return splitfraction;
     }
 
+  
+    
+    
+    
+    
     public static int greatestcommon (int top,int bot){
     	while (bot > 0){
     		int x = bot;
@@ -47,9 +52,8 @@ if (frac.contains("/"))
     	return top;
     }
     public static int[] reduce(int top, int den){
-    	int[]rf={top,den};
     	 int gcf = greatestcommon(top, den);
-    	int [] rf1 = {top/gcf, den/gcf};
+    	int [] rf = {top/gcf, den/gcf};
     	   
 		return rf;}
    
@@ -63,6 +67,13 @@ if (frac.contains("/"))
     //        
     // The function should return the result of the fraction after it has been calculated
     //      e.g. return ==> "1_1/4"
+    
+    	
+    	
+    	
+    	
+    
+    
     public static String produceAnswer(String scanned)
     { 
     	int num = 0;
@@ -168,33 +179,33 @@ if (frac.contains("/"))
     		System.out.println(top);
     		System.out.println(den);
     	}
-    //if(whole>0 && top>0 && den>0){
-    //	while (top>den){
-    	//	top=top-den;
-    		//whole++;
-    		//System.out.println(top);
-    		//System.out.println(den);
-    		//System.out.println(whole);
-    	//}}
-   // if(whole<0 && top<0 && den<0){
-    //	while(top<den){
-    	//	top=top-den;
-    	//	whole--;
-    	//	System.out.println(top);
-    	//	System.out.println(den);
-    	//	System.out.println(whole);
-    //	}
-    //}
-    //if(whole<0 && top<0 && den>0){
-    	//while(top<den){
-    	//	top=top+den;
-    		//whole--;
-    		//System.out.println(top);
-    		//System.out.println(den);
-    		//System.out.println(whole);
-   // 	}
-   // }
-    /*if(whole<0 && top>0 && den<0){
+    if(whole>0 && top>0 && den>0){
+    	while (top>den){
+    		top=top-den;
+    		whole++;
+    		System.out.println(top);
+    		System.out.println(den);
+    		System.out.println(whole);
+    	}}
+    if(whole<0 && top<0 && den<0){
+    while(top<den){
+    		top=top-den;
+    		whole--;
+    		System.out.println(top);
+    		System.out.println(den);
+    		System.out.println(whole);
+    	}
+    }
+    if(whole<0 && top<0 && den>0){
+    	while(top<den){
+    		top=top+den;
+    		whole--;
+    		System.out.println(top);
+    		System.out.println(den);
+    		System.out.println(whole);
+   }
+  }
+    if(whole<0 && top>0 && den<0){
     	while(top<den){
     		top=top-den;
     		whole--;
@@ -202,19 +213,22 @@ if (frac.contains("/"))
     		System.out.println(den);
     		System.out.println(whole);
     	}
-   */
-    	//}
-    if(whole<0 && top>0 && den>0){
+   
+
+    }
+    	
+    
     	while(top>den){
     		top=top-den;
+    		whole++;
     		System.out.println(top);
     		System.out.println(den);
     		System.out.println(whole);
     	}
-    }
     	String fract = "";
     	if (top==0){
-    		fract = "" + whole;}
+
+			fract = "" + whole;}
     	if (whole == 0 && top!=0)
     		fract = top + "/" + den;
     	if (whole==0 && top==0){
